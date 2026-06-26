@@ -1,4 +1,5 @@
 <div align="center">
+  <img src="assets/banner.jpg" alt="Awesome Text-to-Speech" width="100%">
   <h1>🔊 Awesome Text-to-Speech (TTS)</h1>
   <p>A curated list of the best Text-to-Speech, speech synthesis, and voice-cloning research — models, papers, benchmarks, and toolkits, with a focus on 2025–2026.</p>
   <p>
