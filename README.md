@@ -28,8 +28,10 @@
 - [Streaming, Real-time & Efficient TTS](#-streaming-real-time--efficient-tts)
 - [Multilingual & Low-resource TTS](#-multilingual--low-resource-tts)
 - [Neural Audio Codecs](#-neural-audio-codecs)
+- [Singing Voice Synthesis](#-singing-voice-synthesis)
 - [Benchmarks & Datasets](#-benchmarks--datasets)
 - [Open-source Toolkits & Implementations](#-open-source-toolkits--implementations)
+- [Commercial & Closed Systems](#-commercial--closed-systems)
 - [Related Awesome Lists](#-related-awesome-lists)
 
 ## 📖 Surveys & Overviews
@@ -66,6 +68,13 @@
 - [Fish Audio S2 Technical Report](https://arxiv.org/abs/2603.08823) — The 2026 successor in the Fish-Speech / OpenAudio line; a current data point on where the open dual-AR TTS recipe has scaled to (2026).
 - [Kokoro-82M](https://github.com/hexgrad/kokoro) — An 82M StyleTTS2-based model that rivals systems 10x its size, Apache-2.0; the reason "tiny local TTS" became a serious category (2025).
 - [Higgs Audio v2](https://github.com/boson-ai/higgs-audio) — Boson AI foundation model doing multi-speaker dialogue, humming, and simultaneous speech+music zero-shot — unusually broad generation surface (2025).
+- [VibeVoice](https://github.com/microsoft/VibeVoice) — Microsoft's open long-form TTS (up to ~90 min, 4 speakers) via next-token diffusion, MIT, ICLR 2026 Oral; the open frontier for long multi-speaker audio (2026).
+- [Sesame CSM](https://github.com/SesameAILabs/csm) — The viral conversational speech model (Llama backbone over Mimi codes), Apache-2.0; the open reference for natural conversational TTS (2025).
+- [Qwen3-Omni](https://github.com/QwenLM/Qwen3-Omni) — Leading open omni LLM with real-time speech output across many languages, Apache-2.0 (2025).
+- [GLM-4-Voice](https://github.com/zai-org/GLM-4-Voice) — A 9B end-to-end open speech LLM (speech-in / speech-out), Apache-2.0 (2024).
+- [Kimi-Audio](https://github.com/MoonshotAI/Kimi-Audio) — Open universal audio foundation model that understands, generates, and converses in one stack (2025).
+- [MiMo-Audio](https://github.com/XiaomiMiMo/MiMo-Audio) — Xiaomi's 7B speech LM with few-shot speech generation and instruct-TTS (2025).
+- [VoxCPM](https://huggingface.co/openbmb/VoxCPM1.5) — Tokenizer-free continuous TTS on MiniCPM-4, Apache-2.0; argues against discrete codecs for naturalness (2025).
 
 ## 🧬 Voice Cloning & Speaker Adaptation
 
@@ -88,7 +97,8 @@
 - [Marco-Voice Technical Report](https://arxiv.org/abs/2508.02038) — Speaker–emotion disentanglement via in-batch contrastive learning plus rotational emotion embeddings for smooth control; ships the CSEMOTIONS dataset (2025).
 - [CoCoEmo: Composable and Controllable Human-Like Emotional TTS via Activation Steering](https://arxiv.org/abs/2602.03420) — First systematic use of activation steering for emotion control, enabling *composable mixed-emotion* synthesis rather than single-label tags (2026).
 - [Toward Natural Emotional Text-To-Speech System with Fine-Grained Non-Verbal Expression Control](https://arxiv.org/abs/2605.25504) — Targets the non-verbal vocalizations (sighs, laughs) that prosody-only emotional TTS routinely ignores (2026).
-- [Sparse Autoencoders for Interpretable Emotion Control in Text-to-Speech](https://arxiv.org/abs/2606.01479) — ICML 2026; applies SAEs to make emotion directions in LLM-based TTS interpretable and individually steerable (2026).
+- [Sparse Autoencoders for Interpretable Emotion Control in Text-to-Speech](https://arxiv.org/abs/2606.01479) — Applies SAEs to make emotion directions in LLM-based TTS interpretable and individually steerable (2026).
+- [Maya1](https://huggingface.co/maya-research/maya1) — A 3B expressive open TTS with inline emotion tags and natural-language voice design (2025).
 - [LLaDA-TTS: Unifying Speech Synthesis and Zero-Shot Editing via Masked Diffusion Modeling](https://arxiv.org/abs/2603.26364) — Converts an AR LLM-TTS into a masked-diffusion model, unifying synthesis and editing with a ~2x speedup on the LLM stage (2026).
 - [Dia-1.6B](https://github.com/nari-labs/dia) — Nari Labs; generates whole multi-speaker dialogue in one pass with nonverbals, an unusually conversational-first open model (2025).
 - [Orpheus-TTS](https://github.com/canopyai/Orpheus-TTS) — Canopy; a Llama-3B backbone with tag-guided emotion and ~100-200 ms streaming, Apache-licensed LLM-as-TTS (2025).
@@ -105,6 +115,9 @@
 - [VoXtream: Full-Stream Text-to-Speech with Extremely Low Latency](https://arxiv.org/abs/2509.15969) — ICASSP 2026; fully autoregressive zero-shot streaming that starts speaking from the first word, with the lowest reported public initial delay (102 ms on GPU) (2025).
 - [FlashTTS: Fast Streaming TTS with MTP Acceleration and X-pred Mean Flow Distillation](https://arxiv.org/abs/2606.09141) — Interspeech 2026; pairs multi-token prediction with mean-flow distillation to synthesize in two function evaluations at ~325 ms first-packet latency (2026).
 - [dots.tts Technical Report](https://arxiv.org/abs/2606.07080) — A 2B continuous-autoregressive TTS foundation model claiming SoTA multilingual quality with efficient inference; a fresh large open AR-TTS report (2026).
+- [Kyutai TTS / Delayed Streams Modeling](https://github.com/kyutai-labs/delayed-streams-modeling) — Kyutai's open low-latency streaming TTS (and STT) built on delayed-streams modeling; production-grade real-time open weights (2025).
+- [Hertz-dev](https://github.com/Standard-Intelligence/hertz-dev) — The first open base full-duplex audio model (~120 ms theoretical latency); a foundation for two-way conversational speech (2024).
+- [NeuTTS Air](https://huggingface.co/neuphonic/neutts-air) — On-device, CPU-real-time TTS paired with NeuCodec; the practical edge-deployment option (2025).
 
 ## 🌍 Multilingual & Low-resource TTS
 
@@ -132,6 +145,12 @@
 - [NeuCodec](https://huggingface.co/neuphonic/neucodec) — Neuphonic's 0.8 kbps FSQ codec whose baked-in redundancy stays robust over noisy channels; a practical FSQ-over-RVQ argument for real-world pipelines (2025).
 - [UniSRCodec: Unified and Low-Bitrate Single Codebook Codec with Sub-Band Reconstruction](https://arxiv.org/abs/2601.02776) — A high-sample-rate single-codebook codec using mel + sub-band reconstruction, closing the "single codebook yet high fidelity at high sample rate" gap (2026).
 - [Scaling Speech Tokenizers with Diffusion Autoencoders](https://arxiv.org/abs/2602.06602) — ICLR 2026; replaces the usual GAN/RVQ recipe with a scaled diffusion-autoencoder tokenizer, arguing the diffusion decoder is what unlocks quality at scale (2026).
+- [Mimi (Kyutai)](https://huggingface.co/kyutai/mimi) — The 12.5 Hz / ~1.1 kbps streaming semantic+acoustic codec behind Moshi; a foundational low-latency tokenizer for speech LMs (2024).
+- [FocalCodec: Low-Bitrate Speech Coding via Focal Modulation](https://arxiv.org/abs/2502.04465) — A single binary-codebook ultra-low-bitrate codec (NeurIPS 2025) that pushes the single-codebook frontier (2025).
+
+## 🎤 Singing Voice Synthesis
+
+- [DiffSinger: Singing Voice Synthesis via Shallow Diffusion Mechanism](https://github.com/openvpi/DiffSinger) — The canonical open singing-voice synthesis system (shallow-diffusion acoustic model); the de-facto base for the open SVS ecosystem (2022).
 
 ## 📊 Benchmarks & Datasets
 
@@ -173,17 +192,23 @@
 - [suno-ai/bark](https://github.com/suno-ai/bark) — Transformer text-to-audio generating speech plus nonverbal sounds/music; MIT-licensed and widely forked (2023).
 - [OHF-Voice/piper1-gpl](https://github.com/OHF-Voice/piper1-gpl) — Actively-maintained successor to Piper, a fast fully-local neural TTS engine (the legacy `rhasspy/piper` is archived) (ongoing).
 
+## 💼 Commercial & Closed Systems
+
+Closed but field-defining — listed for completeness; no weights, API-only.
+
+- [ElevenLabs Eleven v3](https://elevenlabs.io/blog/eleven-v3) — The most expressive commercial TTS of the cycle: inline audio tags for emotion/delivery and 70+ languages (2025).
+- [OpenAI gpt-realtime / next-gen audio](https://openai.com/index/introducing-our-next-generation-audio-models/) — OpenAI's steerable speech-to-speech and `gpt-4o-mini-tts` models powering real-time voice agents (2025).
+- [Cartesia Sonic 3](https://www.cartesia.ai/sonic) — State-space-model TTS with sub-100 ms streaming; the latency leader for voice agents (2025).
+
 ## 📑 Related Awesome Lists
 
 - [ishandutta2007/Awesome-Text-to-Speech](https://github.com/ishandutta2007/Awesome-Text-to-Speech) — Product-oriented list of TTS tools, APIs, and open models; maintained into 2025/2026.
 - [wenet-e2e/speech-synthesis-paper](https://github.com/wenet-e2e/speech-synthesis-paper) — The most comprehensive academic TTS paper list on GitHub (frontend, acoustic models, vocoders, VC, singing).
-- [coqui-ai/TTS-papers](https://github.com/coqui-ai/TTS-papers) — Curated TTS research collection with summaries and code links; strong but effectively frozen around 2021-2022.
 - [ga642381/speech-trident](https://github.com/ga642381/speech-trident) — Up-to-date survey of speech/audio LLMs, representation models, and neural codecs; the best fit for the codec/spoken-LLM angle.
 - [dreamtheater123/Awesome-SpeechLM-Survey](https://github.com/dreamtheater123/Awesome-SpeechLM-Survey) — Companion to an ACL 2025 SpeechLM survey, cataloging SpeechLMs, tokenizers, codecs, datasets, and benchmarks.
 - [liusongxiang/Large-Audio-Models](https://github.com/liusongxiang/Large-Audio-Models) — Tracker for large audio models (spoken LMs, prompt-based synthesis, audio SSL); last major update ~late 2024.
 - [JeffC0628/awesome-voice-conversion](https://github.com/JeffC0628/awesome-voice-conversion) — Dedicated voice-conversion list (parallel/non-parallel, singing VC, VCC datasets); maintained into 2025.
 - [wildminder/awesome-ai-voice](https://github.com/wildminder/awesome-ai-voice) — Practitioner list of open TTS/voice-cloning/music models with comparison tables and HF links; very current, with entries into early 2026.
-- [seungwonpark/awesome-tts-samples](https://github.com/seungwonpark/awesome-tts-samples) — Focused list of TTS papers that ship author audio samples (2017-2020); archived/read-only since 2021.
 
 ---
 
